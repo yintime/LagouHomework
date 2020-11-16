@@ -1,0 +1,351 @@
+// 通过媒体查询指定html的字号，方便后面使用rem
+html {
+    font-size: 20px;
+    font-size: 5.33333vw
+}
+
+@media screen and (max-width:320px) {
+    html {
+        font-size: 17.06667px
+    }
+}
+
+@media screen and (min-width:540px) {
+    html {
+        font-size: 28.8px
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+
+::marker {
+    display: none;
+    content: '';
+}
+
+.clear::after{
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+ul{
+    padding-inline-start: 0px;
+}
+
+.seckill {
+    margin: .5rem;
+    background-color: #fff;
+    border-radius: 0.6rem;
+    overflow: hidden;
+
+    .title_wrap {
+        height: 1.7rem;
+        line-height: 1.7rem;
+        vertical-align: middle;
+        background-image: url(../images/sec-title-bg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+
+        .left {
+            display: block;
+            float: left;
+
+
+            .title {
+                float: left;
+                display: inline-block;
+                height: 1.35rem;
+                margin-top: .4rem;
+                margin-right: 0.25rem;
+                margin-left: 0.5rem;
+                font-size: .7rem;
+                color: #333;
+                letter-spacing: 0;
+                line-height: 1.2;
+            }
+
+            .timer-wrap {
+                display: inline-block;
+                border-radius: .4rem;
+                height: .9rem;
+                line-height: .9rem;
+                font-size: 0;
+                float: left;
+                margin-top: .4rem;
+                vertical-align: middle;
+            }
+
+            .seckill-nth {
+                height: 100%;
+                border-radius: .4rem;
+                font-size: .65rem;
+                color: #ff2727;
+                letter-spacing: 0;
+                padding-right: .25rem;
+                padding-left: .25rem;
+                float: left;
+                position: relative;
+                left: -1px;
+                margin-right: .2rem;
+                line-height: 1.4;
+            }
+
+            .seckill-nth::after {
+                height: .875rem;
+                width: 1.025rem;
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                background-image: url(../images/seckill-time-to_1de70c91.png);
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-size: contain;
+            }
+
+            .seckill-timer {
+                margin-right: .2rem;
+                height: 100%;
+                float: right;
+            }
+
+            .seckill-time,
+            .seckill-time-separator {
+                float: left;
+                display: inline-block;
+                height: 100%;
+                line-height: 1.4;
+                font-size: .6rem;
+                text-align: center;
+                font-family: PingFangSC-Regular;
+                color: #f2270c;
+                letter-spacing: 0;
+                font-weight: 700;
+            }
+
+            .seckill-time {
+                width: .75rem;
+                color: #fff;
+                background-image: -webkit-linear-gradient(230deg, #ff6152, #fa2c19);
+                background-image: linear-gradient(-140deg, #ff6152, #fa2c19);
+                background-color: #fa2c19;
+                border-radius: .2rem;
+                border-top-left-radius: 0.2rem;
+                border-top-right-radius: 0.2rem;
+                border-bottom-right-radius: 0.2rem;
+                border-bottom-left-radius: 0.2rem;
+                text-align: center;
+                font-weight: 400;
+            }
+
+        }
+
+        .seckill-more-link {
+            display: inline-block;
+            color: #f23030;
+            float: right;
+            font-size: .6rem;
+            text-align: right;
+            position: relative;
+            padding-right: 1.1rem;
+        }
+
+        .seckill-more-icon {
+            display: inline-block;
+            width: .55rem;
+            height: .55rem;
+            background: url(../images/arrow_rt_2ccb8cd5.png) no-repeat;
+            background-size: cover;
+            position: absolute;
+            right: .4rem;
+            top: .5rem;
+        }
+
+    }
+
+    .seckill-slider {
+        width: -webkit-calc(100% - .625rem);
+        width: calc(100% - .625rem);
+        margin: 0 auto;
+    }
+
+    .seckill-new-list {
+        transition: all 0.3s ease 0s;
+        transform: translate3d(0px, 0px, 0px);
+        width: 1243.33px;
+        position: relative;
+        background-color: #fff;
+    }
+
+    .seckill-new-item {
+        width: 2.675rem;
+        float: left;
+
+        img{
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+    }
+    .seckill-item-price {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .seckill-new-price {
+        font-family: JDZhengHT-EN-Regular;
+        margin-top: .5rem;
+        display: block;
+        color: #f2270c;
+        font-size: .65rem;
+        line-height: .6rem;
+        height: .6rem;
+        text-align: center;
+        
+        em{
+            font-size: 11px;
+            padding-right: 2px;
+            font-style: normal;
+        }
+    }
+    .seckill-original-price {
+        color: #999;
+        font-size: .6rem;
+        line-height: .6rem;
+        margin: .2rem 0 .55rem;
+        text-align: center;
+        padding: 0 .1rem;
+        display: inline-block;
+        position: relative;
+
+        em {
+            font-size: .45rem;
+            position: relative;
+            padding-right: .1rem;
+        }
+
+        hr {
+            position: absolute;
+            left: 0;
+            top: 0rem;
+            width: 200%;
+            height: 1px;
+            background-color: #999;
+            -webkit-transform: scale(.5);
+            transform: scale(.5);
+            -webkit-transform-origin: left top;
+            transform-origin: left top;
+            overflow: hidden;
+            box-sizing: border-box;
+            border: 0;
+        }
+    }
+
+}
+
+// 东家小院
+
+.xiaoyuan{
+    .tit{
+        height: 1.75rem;
+        img {
+            min-width: 1px;
+            width: auto;
+            max-height: 100%;
+            text-align: center;
+            margin: 0 auto;
+            min-height: 1px;
+        }
+    }
+
+    
+
+    .container{
+        position: relative;
+        margin-left: .5rem;
+        margin-right: .5rem;
+        margin-bottom: .5rem;
+    }
+
+    .floor-graphic-item {
+        width: 100%;
+        background: #fff;
+        font-size: 100%;
+        overflow: hidden;
+    }
+    .graphic-text {
+        height: 1.9rem;
+        width: 100%;
+        overflow: visible;
+        overflow: initial;
+        position: relative;
+        z-index: 2;
+        float: left;
+        padding: 0 0 0 .45rem;
+        line-height: 1;
+    }
+    
+    .graphic-tit {
+        font-weight: 700;
+        font-size: .8rem;
+        line-height: 1.125rem;
+        display: inline-block;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    
+    span{
+        background: linear-gradient(90deg, #45CAFF,#1471FB);
+        color: transparent;
+        -webkit-background-clip: text;
+        
+    }
+    p{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        color: #666771;
+        margin: 0;
+    }
+
+    img {
+        width: 3rem;
+        height: 3rem;
+        float: left;
+        margin: .275rem .35rem 0;
+    }
+
+    .graphic-separation {
+        background: #fff;
+        position: relative;
+        font-family: PingFangSC-Light,PingFang-Medium,PingFangSC-Regular,Helvetica,Droid Sans,Arial,sans-serif;
+        width: 50%;
+        height: 6rem;
+        float: left;
+        box-sizing: border-box;
+    }
+
+    .bdr-r {
+        border-right: 1px solid #f5f5f5;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: rgb(245, 245, 245);
+    }
+
+    .bdr-bottom {
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    .graphic-col04-bg, .graphic-col04-sm {
+        position: relative;
+        width: 25%;
+        float: left;
+    }
+}
