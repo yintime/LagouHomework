@@ -15,7 +15,15 @@ body {
 
 ul,ol {
   list-style: none;
+  box-sizing: border-box;
 }
+
+a{
+  text-decoration: none;
+  color: #333;
+}
+
+*{margin: 0;padding: 0;}
 // 后续的尺寸都需要使用 rem 单位
 @baseFont: 50px;
 // top-banner 区域
@@ -183,43 +191,523 @@ ul,ol {
   }
 }
 
-// toolbar
-.toolbar{
-  box-sizing: content-box;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0 auto;
+//newImgFloor 作为最外包裹层 从这一部分的的内容来看 newImgFloor的样式应该目的主要是为了楼层区域的一个初步的定位
+//希望有可能的话 希望老师讲讲如何 合理规划 结构的思路 怎样便于提高CSS的复用率 当然这个也可以放到后面结合JS一起再说
+.newImgFloor {
+  // display: none;
   width: 750rem / @baseFont;
-  height: 100rem / @baseFont;
-  z-index: 199;
-  border-top: 1px solid #eee;
-  background-color: #fff;
-  transition: all .2s linear;
-  display: flex;
-  flex-direction: row;
-  .toolbar-item{
-    width: 150rem / @baseFont;
-    height: 100rem / @baseFont;
-  }
-  a{
-    text-decoration: none;
-  }
-  img{
-    display: block;
-    width: 48rem / @baseFont;
-    height: 48rem / @baseFont;
-    margin: 12rem / @baseFont auto 0;
-  }
-  span{
-    color: #000;
-    font-weight: bold;
-    display: block;
-    font-size: 20rem / @baseFont;
-    line-height: 32rem / @baseFont;
-    text-align: center;
+  height: 234rem / @baseFont;
+  margin: 24rem / @baseFont auto 0;
+  justify-content: space-between;
+
+  .newImgFloor-content {
+    display: -webkit-flex;
+    display: flex;
+    width: 750rem / @baseFont;
+    height: 234rem / @baseFont;
+
+
+    .newItem img {
+      display: block;
+      width: 187rem / @baseFont;
+      height: 234rem / @baseFont; 
+    }
+
+    .newItem1 img {
+      width: 375rem / @baseFont;
+    }
+
   }
 
 }
 
+.big-blank {
+  width: 750rem / @baseFont;
+  height: 24rem / @baseFont;
+  margin: 0 auto;
+}
+
+.hor-view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.kw-radio1 {
+  border-radius: 12rem / @baseFont 12rem / @baseFont 0 0;
+}
+
+.v7-2big {
+  width: 702rem / @baseFont;
+  height: 258rem / @baseFont;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.zsq-area {
+  position: relative;
+  width: 350rem / @baseFont;
+  height: 258rem / @baseFont;
+  background: #FFF;
+
+  .title-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    width: 350rem / @baseFont;
+    height: 58rem / @baseFont;
+    overflow: hidden;
+    justify-content: start;
+    align-items: flex-end;
+  }
+
+  .title {
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 28rem / @baseFont;
+    letter-spacing: 0;
+    line-height: 40rem / @baseFont;
+    overflow: hidden;
+    max-width: 175rem / @baseFont;
+    height: 40rem / @baseFont;
+    margin: 18rem / @baseFont 8rem / @baseFont 0 24rem / @baseFont;
+    color: #333;
+    /* font-weight: bold; */
+  }
+
+  .count {
+    position: relative;
+    z-index: 1;
+    height: 40rem / @baseFont;
+    color: #333;
+    font-size: 20rem / @baseFont;
+  }
+
+  .count span {
+    font-size: 20rem / @baseFont;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2.5rem / @baseFont;
+    width: 34rem / @baseFont;
+    height: 28rem / @baseFont;
+    line-height: 28rem / @baseFont;
+    text-align: center;
+    background: #FFCC00;
+    border-radius: 9rem / @baseFont;
+    font-weight: bold; 
+  }
+
+  .desc {
+    font-size: 24rem / @baseFont;
+    color: #999;
+    overflow: hidden;
+    margin: 0.08rem 0 0 0.48rem;
+    width: 6rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: .08rem;
+  }
+  ul {
+    position: relative;
+    z-index: 1;
+    width: 350rem / @baseFont;
+    margin: .1rem 0 0 0;
+    display: -webkit-flex;
+    display: flex;
+    padding-left: .56rem;
+
+    li{
+      width: 2.4rem;
+      line-height: 0.72rem;
+
+
+      img {
+        width: 2.4rem;
+        height: 2.4rem;
+        margin: 0 auto;
+      }
+    }
+    
+    li.left{
+      margin-right: 1.1rem;
+    }
+    
+    .tag-price {
+      text-align: center;
+      color: #F50;
+      font-size: .44rem;
+      line-height: .56rem;
+      height: .56rem;
+      margin-top: .02rem;
+      margin-bottom: 0;
+    }
+
+    .first-price {
+      font-size: .52rem;
+    }
+  }
+
+
+}
+
+.big-space {
+  position: relative;
+  background: #fff;
+  width: 7rem;
+  height: 5.16rem;
+
+  .title-wrapper {
+    width: 7rem;
+    height: 1.16rem;
+    overflow: hidden;
+  }
+  .title {
+    float: left;
+    font-family: 500;
+    font-size: .56rem;
+    letter-spacing: 0;
+    line-height: .8rem;
+    overflow: hidden;
+    height: .8rem;
+    margin: 0.36rem 0 0 0.48rem;
+    color: #333;
+    font-weight: bold;
+  }
+  .des {
+    font-size: .48rem;
+    color: #999;
+    overflow: hidden;
+    margin: 0.08rem 0 0 0.48rem;
+    width: 6rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: .08rem;
+  }
+
+  .img-wrapper {
+    position: absolute;
+    width: 2.8rem;
+    height: 3.2rem;
+    top: 1.96rem;
+    left: .48rem;
+  }
+  img {
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0 auto;
+    background: none;
+  }
+  .img-desc {
+    position: absolute;
+    bottom: .16rem;
+    left: -0.1rem;
+    box-sizing: border-box;
+    background-image: url(../images/img-desc.png);
+    background-size: 3rem 1.08rem;
+    width: 3rem;
+    height: 1.08rem;
+    padding-top: 0.44rem;
+    line-height: .64rem;
+    overflow: hidden;
+    font-size: .4rem;
+    text-align: center;
+    color: #000;
+    margin: 0;
+  }
+  .right-wrapper {
+    left: 3.72rem;
+  }
+
+}
+
+.hor-gap {
+  width: 1px;
+  height: 100%;
+  line-height: 0;
+  background: #f2f2f2;
+}
+
+.space-px {
+  width: 14.04rem;
+  height: 1px;
+  margin: 0 auto;
+  background: #f2f2f2;
+}
+
+
+.title-four {
+  display: -webkit-flex;
+  display: flex;
+  width: 14.04rem;
+  height: 3.44rem;
+  background: #FFF;
+  overflow: hidden;
+  margin: 0 auto;
+
+  .left-title {
+    box-sizing: border-box;
+    width: 3.46rem;
+    height: 3.44rem;
+    padding: .94rem .36rem 0 .36rem;
+
+    p.title {
+      width: 2.74rem;
+      height: .9rem;
+      line-height: .9rem;
+      font-size: .64rem;
+      color: #444;
+      font-weight: bold;
+  }
+
+    p.desc {
+      width: 2.74rem;
+      height: .64rem;
+      line-height: .64rem;
+      font-size: .48rem;
+      color: #999;
+    }
+  }
+
+  .four-space {
+    display: -webkit-flex;
+    display: flex;
+    width: 10.16rem;
+    height: 3.44rem;
+    justify-content: space-between;
+
+    .four-item {
+      position: relative;
+      box-sizing: border-box;
+      width: 2.4rem;
+      height: 3.44rem;
+      .click-area {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      p.title {
+        position: absolute;
+        top: 2.48rem;
+        left: 0;
+        width: 2.4rem;
+        height: .6rem;
+        line-height: .6rem;
+        font-size: .44rem;
+        text-align: center;
+        color: #333;
+      }
+
+      a.img-wrapper {
+        position: absolute;
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        top: .36rem;
+        left: .2rem;
+
+        img {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+      
+    }
+  }
+
+  
+}
+
+.kw-radio2 {
+  border-radius: 0 0 .24rem .24rem;
+}
+
+
+.guessUlike {
+  width: 15rem;
+  /* min-height: 41rem; */
+  margin: 0 auto;
+
+  .pro-list-wrapper {
+    width: 15rem;
+    line-height: 0.68rem;
+
+    .pro-list {
+      width: 14.04rem;
+      margin: 0 auto;
+      display: -webkit-flex;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .left-list{
+      width: 6.84rem;
+    }
+
+  }
+}
+
+.kw-wrapper {
+  position: relative;
+  box-sizing: border-box;
+  width: 6.84rem;
+  overflow: hidden;
+  border-radius: .24rem;
+  margin-bottom: .36rem;
+  background-color: #FFF;
+}
+
+.normal-pro {
+  height: 10.84rem;
+  padding: 0 0 .28rem 0;
+
+  .pro-image-wrapper {
+    position: relative;
+    width: 6.84rem;
+    height: 6.84rem;
+  }
+
+  .pro-img {
+    width: 6.84rem;
+    height: 6.84rem;
+    border-radius: .24rem .24rem 0 0;
+  }
+
+  .pro-title {
+    margin: .36rem auto 0;
+    width: 6.36rem;
+    height: 1.34rem;
+    font-size: .52rem;
+    line-height: .68rem;
+    font-weight: bold;
+    overflow: hidden;
+    box-sizing: content-box;
+    
+  }
+  .cuxiao-tag {
+    display: -webkit-flex;
+    display: flex;
+    width: 5.38rem;
+    margin: .22rem .24rem .48rem;
+    height: .48rem;
+    overflow: hidden;
+    flex-wrap: wrap;
+    .cx-text {
+      margin: 0 .06rem .04rem .04rem;
+      border-radius: .12rem;
+      height: .48rem;
+      padding: .04rem .24rem;
+      line-height: .4rem;
+      font-size: .36rem;
+      box-sizing: border-box;
+      border: 1px solid #FFBB00;
+      background: #FEFBEE;
+    }
+  }
+  .pro-icon {
+    display: block;
+    margin-right: .12rem;
+    height: .36rem;
+    line-height: .36rem;
+    font-size: .36rem;
+    text-align: center;
+    padding: .06rem .12rem;
+    margin-bottom: .04rem;
+    border-radius: .12rem;
+    box-sizing: content-box;
+  }
+
+  .pro-price {
+    height: .76rem;
+    margin-left: .24rem;
+    line-height: .76rem;
+
+    .real-price {
+      display: -webkit-flex;
+      display: flex;
+      height: .76rem;
+      font-size: .48rem;
+      color: #FF4422;
+      font-weight: bold;
+      align-items: flex-end;
+      .pre-price {
+        font-size: .72rem;
+        line-height: .72rem;
+      }
+      .last-price {
+        line-height: .56rem;
+      }
+    }
+  }
+  .guess-zyicon {
+    background: #FFCC00;
+  }
+}
+.price-comments {
+  color: #999999;
+  margin-left: .26rem;
+  font-weight: normal;
+  font-size: .4rem;
+}
+
+
+  .v7-title {
+    display: block;
+    width: 14.04rem;
+    height: 1.2rem;
+    margin: 0 auto;
+    img {
+      display: block;
+      width: 14.04rem;
+      height: 1.2rem;
+      background: none;
+    }
+  }
+
+
+// toolbar
+  .toolbar{
+    box-sizing: content-box;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 750rem / @baseFont;
+    height: 100rem / @baseFont;
+    z-index: 199;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+    transition: all .2s linear;
+    display: flex;
+    flex-direction: row;
+    .toolbar-item{
+      width: 150rem / @baseFont;
+      height: 100rem / @baseFont;
+    }
+
+    img{
+      display: block;
+      width: 48rem / @baseFont;
+      height: 48rem / @baseFont;
+      margin: 12rem / @baseFont auto 0;
+    }
+    span{
+      color: #000;
+      font-weight: bold;
+      display: block;
+      font-size: 20rem / @baseFont;
+      line-height: 32rem / @baseFont;
+      text-align: center;
+    }
+  }

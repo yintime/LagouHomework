@@ -67,6 +67,15 @@ body {
 ul,
 ol {
   list-style: none;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+* {
+  margin: 0;
+  padding: 0;
 }
 .top-banner {
   position: relative;
@@ -219,6 +228,426 @@ ol {
   line-height: 0.56rem;
   text-align: center;
 }
+.newImgFloor {
+  width: 15rem;
+  height: 4.68rem;
+  margin: 0.48rem auto 0;
+  justify-content: space-between;
+}
+.newImgFloor .newImgFloor-content {
+  display: -webkit-flex;
+  display: flex;
+  width: 15rem;
+  height: 4.68rem;
+}
+.newImgFloor .newImgFloor-content .newItem img {
+  display: block;
+  width: 3.74rem;
+  height: 4.68rem;
+}
+.newImgFloor .newImgFloor-content .newItem1 img {
+  width: 7.5rem;
+}
+.big-blank {
+  width: 15rem;
+  height: 0.48rem;
+  margin: 0 auto;
+}
+.hor-view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.kw-radio1 {
+  border-radius: 0.24rem 0.24rem 0 0;
+}
+.v7-2big {
+  width: 14.04rem;
+  height: 5.16rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.zsq-area {
+  position: relative;
+  width: 7rem;
+  height: 5.16rem;
+  background: #FFF;
+}
+.zsq-area .title-wrapper {
+  display: -webkit-flex;
+  display: flex;
+  width: 7rem;
+  height: 1.16rem;
+  overflow: hidden;
+  justify-content: start;
+  align-items: flex-end;
+}
+.zsq-area .title {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 0.56rem;
+  letter-spacing: 0;
+  line-height: 0.8rem;
+  overflow: hidden;
+  max-width: 3.5rem;
+  height: 0.8rem;
+  margin: 0.36rem 0.16rem 0 0.48rem;
+  color: #333;
+  /* font-weight: bold; */
+}
+.zsq-area .count {
+  position: relative;
+  z-index: 1;
+  height: 0.8rem;
+  color: #333;
+  font-size: 0.4rem;
+}
+.zsq-area .count span {
+  font-size: 0.4rem;
+  color: #333;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.05rem;
+  width: 0.68rem;
+  height: 0.56rem;
+  line-height: 0.56rem;
+  text-align: center;
+  background: #FFCC00;
+  border-radius: 0.18rem;
+  font-weight: bold;
+}
+.zsq-area .desc {
+  font-size: 0.48rem;
+  color: #999;
+  overflow: hidden;
+  margin: 0.08rem 0 0 0.48rem;
+  width: 6rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 0.08rem;
+}
+.zsq-area ul {
+  position: relative;
+  z-index: 1;
+  width: 7rem;
+  margin: 0.1rem 0 0 0;
+  display: -webkit-flex;
+  display: flex;
+  padding-left: 0.56rem;
+}
+.zsq-area ul li {
+  width: 2.4rem;
+  line-height: 0.72rem;
+}
+.zsq-area ul li img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 0 auto;
+}
+.zsq-area ul li.left {
+  margin-right: 1.1rem;
+}
+.zsq-area ul .tag-price {
+  text-align: center;
+  color: #F50;
+  font-size: 0.44rem;
+  line-height: 0.56rem;
+  height: 0.56rem;
+  margin-top: 0.02rem;
+  margin-bottom: 0;
+}
+.zsq-area ul .first-price {
+  font-size: 0.52rem;
+}
+.big-space {
+  position: relative;
+  background: #fff;
+  width: 7rem;
+  height: 5.16rem;
+}
+.big-space .title-wrapper {
+  width: 7rem;
+  height: 1.16rem;
+  overflow: hidden;
+}
+.big-space .title {
+  float: left;
+  font-family: 500;
+  font-size: 0.56rem;
+  letter-spacing: 0;
+  line-height: 0.8rem;
+  overflow: hidden;
+  height: 0.8rem;
+  margin: 0.36rem 0 0 0.48rem;
+  color: #333;
+  font-weight: bold;
+}
+.big-space .des {
+  font-size: 0.48rem;
+  color: #999;
+  overflow: hidden;
+  margin: 0.08rem 0 0 0.48rem;
+  width: 6rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 0.08rem;
+}
+.big-space .img-wrapper {
+  position: absolute;
+  width: 2.8rem;
+  height: 3.2rem;
+  top: 1.96rem;
+  left: 0.48rem;
+}
+.big-space img {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 0 auto;
+  background: none;
+}
+.big-space .img-desc {
+  position: absolute;
+  bottom: 0.16rem;
+  left: -0.1rem;
+  box-sizing: border-box;
+  background-image: url(../images/img-desc.png);
+  background-size: 3rem 1.08rem;
+  width: 3rem;
+  height: 1.08rem;
+  padding-top: 0.44rem;
+  line-height: 0.64rem;
+  overflow: hidden;
+  font-size: 0.4rem;
+  text-align: center;
+  color: #000;
+  margin: 0;
+}
+.big-space .right-wrapper {
+  left: 3.72rem;
+}
+.hor-gap {
+  width: 1px;
+  height: 100%;
+  line-height: 0;
+  background: #f2f2f2;
+}
+.space-px {
+  width: 14.04rem;
+  height: 1px;
+  margin: 0 auto;
+  background: #f2f2f2;
+}
+.title-four {
+  display: -webkit-flex;
+  display: flex;
+  width: 14.04rem;
+  height: 3.44rem;
+  background: #FFF;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.title-four .left-title {
+  box-sizing: border-box;
+  width: 3.46rem;
+  height: 3.44rem;
+  padding: 0.94rem 0.36rem 0 0.36rem;
+}
+.title-four .left-title p.title {
+  width: 2.74rem;
+  height: 0.9rem;
+  line-height: 0.9rem;
+  font-size: 0.64rem;
+  color: #444;
+  font-weight: bold;
+}
+.title-four .left-title p.desc {
+  width: 2.74rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #999;
+}
+.title-four .four-space {
+  display: -webkit-flex;
+  display: flex;
+  width: 10.16rem;
+  height: 3.44rem;
+  justify-content: space-between;
+}
+.title-four .four-space .four-item {
+  position: relative;
+  box-sizing: border-box;
+  width: 2.4rem;
+  height: 3.44rem;
+}
+.title-four .four-space .four-item .click-area {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.title-four .four-space .four-item p.title {
+  position: absolute;
+  top: 2.48rem;
+  left: 0;
+  width: 2.4rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  font-size: 0.44rem;
+  text-align: center;
+  color: #333;
+}
+.title-four .four-space .four-item a.img-wrapper {
+  position: absolute;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  top: 0.36rem;
+  left: 0.2rem;
+}
+.title-four .four-space .four-item a.img-wrapper img {
+  width: 2rem;
+  height: 2rem;
+}
+.kw-radio2 {
+  border-radius: 0 0 0.24rem 0.24rem;
+}
+.guessUlike {
+  width: 15rem;
+  /* min-height: 41rem; */
+  margin: 0 auto;
+}
+.guessUlike .pro-list-wrapper {
+  width: 15rem;
+  line-height: 0.68rem;
+}
+.guessUlike .pro-list-wrapper .pro-list {
+  width: 14.04rem;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.guessUlike .pro-list-wrapper .left-list {
+  width: 6.84rem;
+}
+.kw-wrapper {
+  position: relative;
+  box-sizing: border-box;
+  width: 6.84rem;
+  overflow: hidden;
+  border-radius: 0.24rem;
+  margin-bottom: 0.36rem;
+  background-color: #FFF;
+}
+.normal-pro {
+  height: 10.84rem;
+  padding: 0 0 0.28rem 0;
+}
+.normal-pro .pro-image-wrapper {
+  position: relative;
+  width: 6.84rem;
+  height: 6.84rem;
+}
+.normal-pro .pro-img {
+  width: 6.84rem;
+  height: 6.84rem;
+  border-radius: 0.24rem 0.24rem 0 0;
+}
+.normal-pro .pro-title {
+  margin: 0.36rem auto 0;
+  width: 6.36rem;
+  height: 1.34rem;
+  font-size: 0.52rem;
+  line-height: 0.68rem;
+  font-weight: bold;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+.normal-pro .cuxiao-tag {
+  display: -webkit-flex;
+  display: flex;
+  width: 5.38rem;
+  margin: 0.22rem 0.24rem 0.48rem;
+  height: 0.48rem;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+.normal-pro .cuxiao-tag .cx-text {
+  margin: 0 0.06rem 0.04rem 0.04rem;
+  border-radius: 0.12rem;
+  height: 0.48rem;
+  padding: 0.04rem 0.24rem;
+  line-height: 0.4rem;
+  font-size: 0.36rem;
+  box-sizing: border-box;
+  border: 1px solid #FFBB00;
+  background: #FEFBEE;
+}
+.normal-pro .pro-icon {
+  display: block;
+  margin-right: 0.12rem;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  font-size: 0.36rem;
+  text-align: center;
+  padding: 0.06rem 0.12rem;
+  margin-bottom: 0.04rem;
+  border-radius: 0.12rem;
+  box-sizing: content-box;
+}
+.normal-pro .pro-price {
+  height: 0.76rem;
+  margin-left: 0.24rem;
+  line-height: 0.76rem;
+}
+.normal-pro .pro-price .real-price {
+  display: -webkit-flex;
+  display: flex;
+  height: 0.76rem;
+  font-size: 0.48rem;
+  color: #FF4422;
+  font-weight: bold;
+  align-items: flex-end;
+}
+.normal-pro .pro-price .real-price .pre-price {
+  font-size: 0.72rem;
+  line-height: 0.72rem;
+}
+.normal-pro .pro-price .real-price .last-price {
+  line-height: 0.56rem;
+}
+.normal-pro .guess-zyicon {
+  background: #FFCC00;
+}
+.price-comments {
+  color: #999999;
+  margin-left: 0.26rem;
+  font-weight: normal;
+  font-size: 0.4rem;
+}
+.v7-title {
+  display: block;
+  width: 14.04rem;
+  height: 1.2rem;
+  margin: 0 auto;
+}
+.v7-title img {
+  display: block;
+  width: 14.04rem;
+  height: 1.2rem;
+  background: none;
+}
 .toolbar {
   box-sizing: content-box;
   position: fixed;
@@ -238,9 +667,6 @@ ol {
 .toolbar .toolbar-item {
   width: 3rem;
   height: 2rem;
-}
-.toolbar a {
-  text-decoration: none;
 }
 .toolbar img {
   display: block;
