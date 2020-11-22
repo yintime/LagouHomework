@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/homework.css">
+    <script src="./js/homework.js"></script>
+</head>
+<body>
+    <div class="QA-container">
+        <div class="question">
+            1. 请写出两种将Javascript应用到网页的方式 
+        </div>
+        <div class="answer">
+            <p>答：1.写在 html 中的 &ltscript&gt标签中。</p>
+            <p class="">2.写在外部 js 文件中，在页面引入。</p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            2. 如何定义一个变量？变量的命名规则有哪些？ 
+        </div>
+        <div class="answer">
+            <p>答：定义方法：使用一个 var 的关键字进行定义，后面必须加一个空格，空格后面自定义变量名。</p>
+            <p class="">变量的命名规则和规范</p>
+            <p>规则 - 必须遵守的，不遵守会报错</p>
+            <p>由字母、数字、下划线、 $ 符号组成，不能以数字开头。</p>
+            <p>字母区分大小写， A 和 a 表示不同。</p>
+            <p>不能是关键字和保留字，关键字指的是js中有特殊功能的小词语，比如 var、 for 等；</p>
+            <p>保留字指的是现在没有特殊功能，但是将来新语法中有可能作为关键字使用。</p>
+            <p>规范 - 建议遵守的，不遵守不会报错</p>
+            <p>变量名必须有意义</p>
+            <p>遵守驼峰命名法。多个单词组合而成的，第一个单词首字母小写，后面单词的首字母需要大写。</p>
+            <p>例如： userName、 userPassword</p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            3. == 和 === 的区别
+        </div>
+        <div class="answer">
+            <p>答：== 相等，只判断值大小是否相等，不判断数据类型</p>
+            <p>=== 全等，不光判断值相等，还要判断数据类型相等</p>
+        </div>
+    </div>
+    
+    <div class="QA-container">
+        <div class="question">
+            4. JS的简单数据类型有哪些并简单描述
+        </div>
+        <div class="answer">
+            <p>答：Number 数字类型</p>
+            <p>数字类型，不区分整数、浮点数、特殊值，都是 Number 类型</p>
+            <p>String 字符串类型</p>
+            <p>字符串类型，所有的字符串都是 String 类型</p>
+            <p>undefined undefined 类型</p>
+            <p>undefined 本身是一个数据，表示未定义。</p>
+            <p>变量只声明的时候值默认是 undefined。</p>
+            <p>Boolean 布尔类型</p>
+            <p>Boolean 字面量： 只有 true 和 false 两个字面量的值，必须是小写字母。</p>
+            <p>计算机内部存储： true为1， false为0</p>
+            <p>null null类型</p>
+            <p>null 本身是一个数据。</p>
+            <p>从逻辑角度， null值表示一个空对象指针。</p>
+            <p>如果定义的变量准备在将来用于保存对象，最好将该变量初始化为 null。</p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            5.JS的算数运算符有哪些
+        </div>
+        <div class="answer">
+            <p>答：+ - * / % ()</p>
+            <p>%:取余，取模。 a / b = c 余 d，就说a % b = d。</p>
+            <p>运算顺序：先算乘除取余、再算加减，有小括号先算小括号。</p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            6. JS的比较运算符有哪些
+        </div>
+        <div class="answer">
+            <p>答：> 大于</p>
+            <p>< 小于</p>
+            <p>>= 大于等于</p>
+            <p><= 小于等于</p>
+            <p>== 相等，只判断值大小是否相等，不判断数据类型</p>
+            <p>!= 不等，与相等完全相反</p>
+            <p>=== 全等，不光判断值相等，还要判断数据类型相等</p>
+            <p>!== 不全等，与全等于完全相反</p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            7. S的逻辑运算符有哪些
+        </div>
+        <div class="answer">
+            <p>答：&& 逻辑与运算符 且</p>
+            <p>|| 逻辑或运算符</p>
+            <p>! 逻辑非运算符</p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            8.var i = 100; i++; j = i++;y = ++j;请问j和y分别是多少
+        </div>
+        <div class="answer">
+            <p>答：以上JS代码全部执行完时，j和y均为102；</p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>9. 计算下列算式，并将结果输出：</p>
+            <img src="./images/Ciqc1F-o3E-AAHsFAAAMVVjxnwE475.png" alt="">
+        </div>
+        <div class="answer">
+            <p>答：<button id="QA9" onclick="QA9()">点击运行</button></p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>10. 住房公积金缴纳金额与工资两者的关系是：</p>
+            <p>住房公积金 = 税前工资 * 0.1 * 2 ;</p>
+            <p>编写程序，让用户输入税前工资，弹出对应的公积金数额。</p>
+        </div>
+        <div class="answer">
+            <p>答： <input type="number" name="beforeTax" id="beforeTax" placeholder="请在这里输入税前工资">
+                <button id="QA10" onclick="QA10()">计算公积金</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>11. 用JS计算下列算式，并将结果在弹出：</p>
+            <img src="./images/QA11.png" alt="">
+        </div>
+        <div class="answer">
+            <p>答：<button id="QA11" onclick="QA11()">点击运行</button></p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>12.  编写程序，提示用户输入圆锥的底面半径和高，然后弹出它的体积，计算圆锥体积的公式是：</p>
+            <p>体积V=1/3π半径2*高</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>半径</span>
+                <input type="number" name="radius" id="radius" placeholder="半径">
+                <span>高度</span>
+                <input type="number" name="height" id="height" placeholder="高度">
+                <button id="QA12" onclick="QA12()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>13.如果今天是星期二，那么1000天后是星期几？用户输入一个天数，计算这个天数后是星期几。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                今天是
+                <select>
+                    <option value ="0" style="display: none;">星期天</option>
+                    <option value ="1" style="display: none;">星期一</option>
+                    <option value ="2" selected>星期二</option>
+                    <option value="3" style="display: none;">星期三</option>
+                    <option value="4" style="display: none;">星期四</option>
+                    <option value="5" style="display: none;">星期五</option>
+                    <option value="6" style="display: none;">星期六</option>
+                  </select>,
+                <input type="number" name="day" id="day" placeholder="请输入一个天数" value="1000">
+                天后是
+                <button id="QA13" onclick="QA13()">星期？</button>
+            </>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>14.  用户输入一个三位数，弹出各个数位的和。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入一个三位数</span>
+                <input type="number" name="threeBitNumber" id="threeBitNumber"  min="100" max="999">
+                <button id="QA14" onclick="QA14()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>15.  用户输入一个数字，然后判断这个数字能否被5、6整除的情况，根据情况弹出下面4种警告框：</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入一个数</span>
+                <input type="number" name="QA15Number" id="QA15Number">
+                <button id="QA15" onclick="QA15()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>16.   用户输入一个数字，然后再输入一个数字。然后弹出警告框：判断奇偶性是否一致</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入一个数</span>
+                <input type="number" name="QA16Number1" id="QA16Number1">
+                <span>请输入另一个数</span>
+                <input type="number" name="QA16Number2" id="QA16Number2">
+                <button id="QA16" onclick="QA16()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>17. 用户输入一个年份，判断这个年是否是闰年。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入一个年份</span>
+                <input type="number" name="QA17Year" id="QA17Year" min="1">
+                <button id="QA17" onclick="QA17()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>18. 推导循环执行的顺序，用文字进行说明，并推导出可能的结果。</p>
+            <p>for(var m = 1,n = 2; m + n < 25; m++){</p>
+            <p> n += 3;</p>
+            <p>console.log(m);</p>
+            <p>}</p>
+        </div>
+        <div class="answer">
+            <p>答：n在循环体内自增3，m在每次循环体最后自增1，当m+n>=25的，循环结束。</p>
+            <p>所以实际输出为1、2、3、4、5、6</p>
+            <p>
+                <span>点击按钮运行代码，在控制台查看加入的调试信息</span>
+                <button id="QA18" onclick="QA18()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>19. 推导循环执行的顺序，用文字进行说明，并推导出可能的结果。</p>
+            <p>for(var i = 30 ; i > 5 ; i -= 7){</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;console.log(i--);</p>
+            <p>}</p>
+        </div>
+        <div class="answer">
+            <p>答：i在输出自己后自减1，又在每次循环体最后自减7，i<=25的，循环结束。</p>
+            <p>所以实际输出为30、22、14、6</p>
+            <p>
+                <span>点击按钮运行代码，在控制台查看加入的调试信息</span>
+                <button id="QA19" onclick="QA19()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>20. 用户输入一个数字n，计算1+2+3+4+……n的和。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入一个数字</span>
+                <input type="number" name="QA20Number" id="QA20Number" min="0">
+                <button id="QA20" onclick="QA20()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>21. 用户输入一个整数n，计算n的阶乘。即n*(n-1)*(n-2)*……*3*2*1.</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入一个数字</span>
+                <input type="number" name="QA21Number" id="QA21Number" min="0">
+                <button id="QA21" onclick="QA21()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>22. 用户输入一个数字n</p>
+            <p>计算 <img src="./images/QA22.png" alt=""></p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入一个数字</span>
+                <input type="number" name="QA22Number" id="QA22Number" min="2">
+                <button id="QA22" onclick="QA22()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>23. 用户输入一个数字，在控制台中列出它的所有约数。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入一个数字</span>
+                <input type="number" name="QA23Number" id="QA23Number" min="0">
+                <button id="QA23" onclick="QA23()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>24. 水仙花数是一种特殊的四位数，它的特点就是，每个数位的四次方和，等于它本身。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <button id="QA24" onclick="QA24()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>25. 如果一个数恰好等于它的约数之和，则称该数为“完美数”。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <button id="QA25" onclick="QA25()">点击运行，请在控制台中查看</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>26. 用户输入一个数字，判断这个数字是否是质数。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入一个数字</span>
+                <input type="number" name="QA26Number" id="QA26Number" min="0">
+                <button id="QA26" onclick="QA26()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>27. 列出1~10000的所有质数。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <button id="QA27" onclick="QA27()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>28. 苹果3元一个，鸭梨2元一个，桃子1元一个。现在想用200元正好买100个水果，在控制台中列出所有可能性。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <button id="QA28" onclick="QA28()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>29. 有这样一个代码</p>
+            <p>switch(name) {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;case "jt":alert('金团网);break;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;case "ejt":alert('金团相相贷'); break;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;case "ejin":alert("网上综合金融体验馆");break;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;default:alert("金团网络典当");</p>
+            <p>}</p>
+            <p>请用if来实现上面的效果</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入字符串</span>
+                <input type="text" name="QA29Number" id="QA29Number">
+                <button id="QA29" onclick="QA29()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            30. JS有几种循环，分别是什么
+        </div>
+        <div class="answer">
+            <p>答：三种循环</p>
+            <p>1.for循环</p>
+            <p>2.do while循环</p>
+            <p>3.while循环</p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            31. break和continue的区别是什么
+        </div>
+        <div class="answer">
+            <p>答：break语句:</p>
+            <p>我已经找到我要的答案了，我不需要进行更多的循环了！</p>
+            <p>break 语句的作用可以立即停止当前的 for、do while、while 循环。</p>
+            <p>根据一些条件设置 break 位置，直到循环能够执行到 break 语句立即停止执行，跳出循环。</p>
+            <p>continue语句:</p>
+            <p>这个答案不是我想要的，赶紧试试下一个吧！</p>
+            <p>遇到 continue 表示当前的一次循环数据不是我们想要的，会立即停止当前次的循环，立即进入下一次循环。</p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>32. 请用循环计算出 1+2+3+4+5+...+100 的值</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <button id="QA32" onclick="QA32()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+
+    <div class="QA-container">
+        <div class="question">
+            <p>33. 开发一款软件，根据公式（身高-108）*2=体重，可以有10斤左右的浮动。判断测试者体重为标准体重还是超重还是偏瘦</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <span>请输入身高（厘米）</span>
+                <input type="number" name="QA33Height" id="QA33Height" min="0">
+            </p>
+            <p>
+                <span>&nbsp;请输入体重（斤）</span>
+                <input type="number" name="QA33Weight" id="QA33Weight" min="0">
+            </p>
+            <p>&nbsp;
+                <button id="QA33" onclick="QA33()">点击运行</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>34. var grade = prompt("请输入分数");</p>
+            <p>switch (parseInt(grade / 10)) {</p>
+            <p>case 10:</p>
+            <p>case 9:</p>
+            <p>&nbsp;&nbsp;alert("你的成绩等级为优秀");break;</p>
+            <p>case 8:</p>
+            <p>case 7:</p>
+            <p>case 6:</p>
+            <p>&nbsp;&nbsp;alert("你的成绩等级为良好");break;</p>
+            <p>default:</p>
+            <p>&nbsp;&nbsp;alert("你的成绩等级为不及格，继续加油哦！");</p>
+            <p>}</p>
+            <p>将上述代码使用switch写法的另一种方式实现，以及使用if判断实现一次</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <button id="QA34" onclick="QA34()">另一种写法</button>
+                <button id="QA34_if" onclick="QA34_if()">if写法</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="QA-container">
+        <div class="question">
+            <p>35.  输入月份，显示当月天数（输入2月时需要再次输入年份判断是不是闰年后在显示当月天数）</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <button id="QA35" onclick="QA35()">点击运行</button>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
