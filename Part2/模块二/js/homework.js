@@ -61,7 +61,7 @@ function QA04(){
         return n*factorial(n-1);
     }
     function isPetunia(n){
-        return n == factorial(n/100)+factorial(n/10%10)+factorial(n%10);
+        return n == factorial(Math.floor(n/100))+factorial(Math.floor(n/10)%10)+factorial(n%10);
     }
     for(i=100;i<1000;i++){
         if (isPetunia(i)) console.log(i);
