@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/homework.css">
+</head>
+<style>
+</style>
+<body>
+    <div class="QA-container">
+        <div class="question">
+            <p>10. 利用事件委托的方法，给一个无序列表的列表项添加点击更改背景色事件。简单说明思路。</p>
+        </div>
+        <div class="answer" id="QA10">
+            <p>思路见代码script标签中注释</p>
+            <ul id="list">
+                <li>选项一</li>
+                <li>选项二</li>
+                <li>选项三</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        //事件委托：子元素公共类型事件委托给父级添加
+        //只需要绑定一次，不需要用对每个子元素进行绑定
+        let eleList = document.getElementById("list");
+        let ele = eleList.children;
+        eleList.onclick = function(e) {
+            //这里题目没有要求排他，就不遍历了排他了
+            //而且如果执行遍历体现不出委托的意义了
+            //因为一样遍历子元素直接可以绑定子元素了
+            //所以这边做了类似复选效果的 再次选中变透明
+            //参数e是事件对象
+            //e.target属性是事件源
+            console.log(e.target.style.backgroundColor != "red");
+            if(e.target.style.backgroundColor != "red"){
+                e.target.style.backgroundColor = "red";
+            }else if(e.target.style.backgroundColor === "red"){
+                e.target.style.backgroundColor = "transparent";
+            }
+        }
+    </script>
+
+
+
+<script src="./js/homework.js"></script>
+</body>
+</html>

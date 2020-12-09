@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/homework.css">
+</head>
+<style>
+    .hide{
+        display: none;
+    }
+    .show{
+        display: block;
+    }
+</style>
+<body>
+    <div class="QA-container">
+        <div class="question">
+            <p>7. &ltdiv class="erweima hide" id="er"&gt，将class的属性值中的hide更换为show，其他保持不变，请写出适合的方法。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <div class="erweima hide" id="er">
+                    div里的内容
+                </div>
+                <button onclick="toShow()">去除hide</button>
+                <button onclick="toHide()">去除show</button>
+            </p>
+        </div>
+    </div>
+    <script>
+        function toShow(){
+            ele = document.getElementById("er");
+            ele.className = ele.className.replace("hide","show");
+        }
+
+        function toHide(){
+            ele = document.getElementById("er");
+            ele.className = ele.className.replace("show","hide");
+        }
+    </script>
+
+
+
+<script src="./js/homework.js"></script>
+</body>
+</html>

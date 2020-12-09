@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 清除默认样式 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul,ol {
+      list-style: none;
+    }
+    .lunbo {
+      position: relative;
+      width: 880px;
+      height: 550px;
+      border: 1px solid #333;
+      margin: 20px auto;
+    }
+    .lunbo .pic li {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 880px;
+      height: 550px;
+      display: none;
+    }
+    .lunbo .pic .current {
+      display: block;
+    }
+    /* 按钮 */
+    .lunbo .btn a {
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      background-color: rgba(255,255,255,0.3);
+      font: 20px/40px "宋体";
+      text-align: center;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .lunbo .btn .leftbtn {
+      left: 20px;
+    }
+    .lunbo .btn .rightbtn {
+      right: 20px;
+    }
+    .lunbo .btn a:hover {
+      background-color: rgba(255,255,255,0.6);
+    }
+    /* 下标 */
+    .lunbo .sub {
+      position: absolute;
+      left: 100px;
+      bottom: 50px;
+      width: 240px;
+    }
+    .lunbo .sub li {
+      float: left;
+      width: 20px;
+      height: 20px;
+      margin-right: 20px;
+      background-color: rgba(255,255,255,0.4);
+      font: 12px/20px "微软雅黑";
+      text-align: center;
+      color: #666;
+      cursor: pointer;
+    }
+    .lunbo .sub .current {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- 轮播图大结构 -->
+  <div class="lunbo">
+    <!-- 图片部分 -->
+    <ul class="pic" id="pic">
+      <li class="current"><img src="images/lunbo/c1.jpg"></li>
+      <li><img src="images/lunbo/c2.jpg"></li>
+      <li><img src="images/lunbo/c3.jpg"></li>
+      <li><img src="images/lunbo/c4.jpg"></li>
+      <li><img src="images/lunbo/c5.jpg"></li>
+      <li><img src="images/lunbo/c6.jpg"></li>
+    </ul>
+    <!-- 按钮 -->
+    <div class="btn">
+      <a href="javascript:;" class="leftbtn" onclick="leftBtn()">&lt;</a>
+      <a href="javascript:;" class="rightbtn" onclick="rightBtn()">&gt;</a>
+    </div>
+    <!-- 小圆点 -->
+    <ol class="sub" id="sub">
+      <li class="current">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ol>
+  </div>
+  <script>
+    //获取图片组（li标签组）
+    let pics = document.getElementById("pic").children;
+    //获取圆点组（li标签组）
+    let subs = document.getElementById("sub").children;
+    //全局变量timer（用于关闭）
+    let timer;
+    //定义current变量
+    let current = 0;
+    //通过class字符串含有current确定当前current的值
+    for(let i=0;i<pics.length;i++){
+      let str = pics[i].className;
+      if(str.search("current")!= -1){
+        current = i
+        break;
+      }
+    }
+    console.log(current);
+
+    //左箭头current-1，当已经是0时跳转到最后
+    function leftBtn(){
+      if (current==0){ current=pics.length-1;}
+      else current--;
+      changeCurrent(current);
+      resetTimer();
+    }
+    //右箭头current+1，当已经是最后时跳转到0
+    function rightBtn(){
+      if (current==pics.length-1){ current=0;}
+      else current++;
+      changeCurrent(current);
+      resetTimer();
+    }
+
+    //根据current的值，给对应的li标的class加上current
+    //参数是新的current值
+    function changeCurrent(current){
+      //排他 先把所有的current清空 
+      for(let i=0;i<pics.length;i++){
+        pics[i].className = pics[i].className.replace("current","");
+        subs[i].className = subs[i].className.replace("current","")
+      }
+      //再把需要的current追加current类
+      pics[current].className+="current";
+      subs[current].className+="current";
+    }
+
+    //重置计时器封装函数
+    function resetTimer(){
+      //设表先关
+      clearInterval(timer);
+      timer = setInterval(() => {
+        rightBtn();
+      }, 2000);
+    }
+    //绑定圆点点击事件
+    function bindSubs(){
+      for(let i=0;i<subs.length;i++){
+        subs[i].onclick = function(){
+          changeCurrent(current = i);
+          resetTimer();
+        }
+      }
+    }
+
+    window.onload = function () {
+      bindSubs();
+      resetTimer();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/homework.css">
+</head>
+<style>
+</style>
+<body>
+    <div class="QA-container">
+        <div class="question">
+            <p>9.  在box元素中动态创建无序列表，自定义列表项内容。</p>
+        </div>
+        <div class="answer" id="QA09">
+            <div id="box">
+
+            </div>
+            <button onclick="addList(data)">生成列表</button>
+        </div>
+    </div>
+    <script>
+        let data = ['文字1','文字2','文字3','文字4','文字5','文字6']
+        function addList(data){
+            let box = document.getElementById("box");
+            let ul = box.appendChild(document.createElement("ul"));
+            for(let i=0;i<data.length;i++){
+                ul.appendChild(document.createElement("li")).innerText = data[i];
+            }
+        }
+    </script>
+
+
+
+<script src="./js/homework.js"></script>
+</body>
+</html>

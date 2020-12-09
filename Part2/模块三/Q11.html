@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/homework.css">
+</head>
+<style>
+</style>
+<body>
+    <div class="QA-container">
+        <div class="question">
+            <p>11. 请自定义一个注册事件的兼容函数，要求兼容三种注册事件方法。</p>
+        </div>
+        <div class="answer" id="QA11">
+            <pre>
+                function addEventListener(element,eventName,fn){
+                    //判断当前浏览器是否能支持 addEventListener 方法,ie9以下不支持
+                    if(element.addEventListener){
+                        element.addEventListener(eventName,fn)
+                    //ie9及以上不支持
+                    }else if(element.attachEvent){
+                        element.attachEvent('on' + eventName,fn)
+                    }else{
+                    //传统流事件注册，兼容性好，但是无方法监听效果
+                        element['on' + eventName] = fn
+                    }
+                }
+            </pre>
+            <pre>
+                //解绑事件，使事件只触发一次
+                function removeEventListener(element,eventName,fn){
+                    if(element.removeEventListener){
+                        element.removeEventListener(eventName,fn)
+                    }else if(element.detachEvent){
+                        element.detachEvent('on' + eventName, fn)
+                    }else{
+                        element['on' + eventName] = null;
+                    }
+                }
+            </pre>
+        </div>
+    </div>
+    <script>
+        function addEventListener(element,eventName,fn){
+            //判断当前浏览器是否能支持 addEventListener 方法,ie9以下不支持
+            if(element.addEventListener){
+                element.addEventListener(eventName,fn)
+            //ie9及以上不支持
+            }else if(element.attachEvent){
+                element.attachEvent('on' + eventName,fn)
+            }else{
+            //传统流事件注册，兼容性好，但是无方法监听效果
+                element['on' + eventName] = fn
+            }
+        }
+
+        //解绑事件，使事件只触发一次
+        function removeEventListener(element,eventName,fn){
+            if(element.removeEventListener){
+                element.removeEventListener(eventName,fn)
+            }else if(element.detachEvent){
+                element.detachEvent('on' + eventName, fn)
+            }else{
+                element['on' + eventName] = null;
+            }
+        }
+    </script>
+
+
+
+<script src="./js/homework.js"></script>
+</body>
+</html>

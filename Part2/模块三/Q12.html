@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/homework.css">
+</head>
+<style>
+</style>
+<body>
+    <div class="QA-container">
+        <div class="question">
+            <p>12. 将定时器的开始和停止过程书写在不同的事件函数内部，容易出现用户多次点击出现加速且运动不能停止的情况，请给出解决代码。</p>
+        </div>
+        <div class="answer" id="QA12">
+            <p>答：解决方法</p>
+            <p>设表先关。每次开启新定时器之前， 都清除一次前面的定时器</p>
+            <p>let timer;</p>
+            <p>//在timer被设定新计时器时，先执行一次clearInterval</p>
+            <p><b><i>clearInterval(timer);</i></b></p>
+            <p>timer = setInterval(function(){},1000);</p>
+        </div>
+    </div>
+    <script>
+        let timer;
+        //在timer被设定新计时器时，先执行一次clearInterval
+        clearInterval(timer);
+        timer = setInterval(function(){},1000);
+    </script>
+
+
+
+<script src="./js/homework.js"></script>
+</body>
+</html>

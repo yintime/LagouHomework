@@ -159,7 +159,8 @@ function QA09() {
     let char = document.getElementById("QA09Text").value;
     let n = document.getElementById("QA09Number").value;
     function rightchange(char,n){
-        n = n % char.length;//确保循环
+        if (n<0) alert("此方法不考虑负数兼容性");
+        n = n % char.length;//n在正数的情况下 确保循环
         return char.substr(char.length-n)+char.substr(0,char.length-n);
     }
     console.log(rightchange(char,n));
@@ -203,7 +204,7 @@ function QA11(){
     //一个随机数组包含十个数据，统计大于等于平均数的数据个数
     let numList = [];
     for (i = 0;i<10;i++){
-        numList[i] = Math.floor(Math.random()*100)
+        numList[i] = Math.floor(Math.random()*100);
     }
     console.log(numList);
     
@@ -349,7 +350,7 @@ function QA18(){
                 value[pointer] +=1;
             }
         }
-        //将两个数值合并成K-V
+        //将两个数组合并成K-V
         for(let i=0;i<key.length;i++){
             obj[key[i]] = value[i];
         }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/homework.css">
+</head>
+<body>
+    <div class="QA-container">
+        <div class="question">
+            <p>5. 设置下拉框中的默认随机选中项，自己书写结构和js。</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <select id="QA05">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                    <option value="cadillac">Cadillac</option>
+                    <option value="ford">Ford</option>
+                    <option value="buick">Buick</option>
+                    <option value="gmc">GMC</option>
+                    <option value="dodge">Dodge</option>
+                </select>
+                <button onclick="QA05()">随机一下</button>
+            </p>
+        </div>
+    </div>
+    <script>
+        function QA05(){
+            //排他思想
+            //获取select中的所有options，先去除所有的selected属性
+            let options = document.getElementById("QA05").getElementsByTagName("option");
+            for(let i=0;i<options.length;i++){
+                options[i].removeAttribute("selected");
+            }
+            //再随机给一个option标签加上selected属性
+            //用0-1之间的随机数乘以数组长度取整，确保功能不受数组长度影响
+            let seed = Math.floor(Math.random()*options.length);
+            options[seed].setAttribute("selected","selected");
+        }
+        //加载时执行一次随机option 可能会有闪跳
+        window.onload=function(){QA05()};
+        //由于题目需求描述不具体，且未提供默认的结构，所以对题目的另一种理解：后台读取到数据到前端时直接随机乱序生成option，那么第一项（默认项）也是随机的，但是某些option可能又是必须按照既定顺序显示的。
+    </script>
+
+
+
+<script src="./js/homework.js"></script>
+</body>
+</html>

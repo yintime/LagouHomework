@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/homework.css">
+</head>
+<body>
+    <div class="QA-container">
+        <div class="question">
+            <p>6. 编写一段程序，实现文本框获取和失去焦点效果。要求：1、获得焦点时，如果内部内容为提示语 请输入搜索关键字 ，清空内容并且设置文字颜色为黑色；2、失去焦点时，如果内容为空，恢复默认提示语，并且设置文字颜色为灰色</p>
+        </div>
+        <div class="answer">
+            <p>答：
+                <input type="text" id="QA06" placeholder="请输入搜索关键字" onfocus="QA06Onfocus()" onblur="QA06blur()">
+            </p>
+        </div>
+    </div>
+    <script>
+        //获取焦点事件
+        function QA06Onfocus(){
+            let ele = document.getElementById("QA06");
+            ele.setAttribute("placeholder","");
+            ele.style.color = 'black';
+        }
+        //失去焦点事件
+        function QA06blur(){
+            let ele = document.getElementById("QA06");
+            ele.setAttribute("placeholder","请输入搜索关键字");
+            ele.style.color = 'gray';
+        }
+    </script>
+
+
+
+<script src="./js/homework.js"></script>
+</body>
+</html>

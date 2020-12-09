@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/homework.css">
+</head>
+<style>
+    .hide{
+        display: none;
+    }
+    .show{
+        display: block;
+    }
+</style>
+<body>
+    <div class="QA-container">
+        <div class="question">
+            <p>8.  有一组文本框，要求让每一个文本框在自己输入的时候，背景显示灰色，其他文本框显示白色。</p>
+        </div>
+        <div class="answer" id="QA08">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+        </div>
+    </div>
+    <script>
+        window.onload=function(){
+            let ele = document.getElementById("QA08").getElementsByTagName("input");
+            for (let index = 0; index < ele.length; index++) {
+                ele[index].onfocus = function(){
+                    let ele = document.getElementById("QA08").getElementsByTagName("input");
+                    for (let index = 0; index < ele.length; index++) {
+                        ele[index].style.backgroundColor = "white";
+                    }
+                    this.style.backgroundColor = "gray";
+                }
+                ele[index].onblur = function(){
+                    this.style.backgroundColor = "white";
+                }
+            }
+        }
+    </script>
+
+
+
+<script src="./js/homework.js"></script>
+</body>
+</html>
