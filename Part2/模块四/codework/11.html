@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //11. 检测昵称是否是有汉字字母数字下划线组成，6-8位
+    let str = prompt("请输入内容");
+    let reg = /^[a-zA-Z\d\_\u4e00-\u9fa5]{6,8}$/
+    if(reg.test(str)){
+          alert("true");
+    }else{
+        alert("false");
+    }
+  </script>
+</body>
+
+</html>

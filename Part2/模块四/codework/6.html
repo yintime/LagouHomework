@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //6. 将用户输入的网址全部转化成我们的官网。如www.baidu.com=>www.lagou.com
+    //题目对网址判断条件不明确 吐槽一下 不过条件说明确了 正则表达式这东西自然就出来了
+    //例如：t.sina.cn也是一个合法的网址，所以如果要转化成www.lagou.com直接重新赋值不就好了吗
+    let Url;
+    function inputUrl(){
+      Url = prompt("请输入一个网址");
+      let reg = /^(\w+\.)?(\w+)\.\w{2,3}/
+      return reg.test(Url);
+    }
+    while (!inputUrl()){
+      inputUrl()
+    }
+    console.log(Url)
+    console.log(Url ="www.lagou.com");
+    
+    
+
+  </script>
+</body>
+</html>

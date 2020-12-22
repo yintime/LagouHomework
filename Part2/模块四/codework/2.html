@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //2. 使用set实现数组去重
+    function unique(arr) {
+        //ES6 Set对象自动对数组去重 返回Set对象
+        //通过from方法，将Set对象转为数组
+        return Array.from(new Set(arr));
+    }
+    //随机生成100个0-10的随机数填充到numList
+    let numList = [];
+    for (let i = 0;i<100;i++){
+        numList[i] = Math.floor(Math.random()*10);
+    }
+    console.log(numList);
+    console.log(unique(numList));
+
+  </script>
+</body>
+</html>

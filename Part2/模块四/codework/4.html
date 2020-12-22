@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //4. 检测是否是数字，包括整数，小数
+    //题目要求不明确 追加假设：如果写了小数点，就必须至少带一个小数位（不可写123.），且小数点前即使是0也不能省略（如0.123不可写作.123）
+    let reg = /^-?\d+(\.\d+)?$/;
+    console.log(reg.test("123"));
+    console.log(reg.test("123."));
+    console.log(reg.test(".123"));
+    console.log(reg.test("12a.123"));
+    console.log(reg.test("123.123"));
+    console.log(reg.test("-123.123"));
+  </script>
+</body>
+</html>
