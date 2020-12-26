@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #container{
+    width: 800px;
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+  }
+  #monsters{
+    width: 32px;
+    display: flex;
+    flex-direction:column;
+  }
+  #heroes{
+    width: 32px;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  #log{
+    height: 200px;
+    width: 400px;
+  }
+
+</style>
+
+<body>
+  <div id="container">
+    <div id="monsters">
+      <img id="monster1" src= "" alt="">
+<!--       <img id="monster2" src= "" alt="">
+      <img id="monster3" src= "" alt="">
+      <img id="monster4" src= "" alt=""> -->
+    </div>
+    <div id="log">
+      请通过下方下拉列表选择勇者的行动及目标<br/>
+      点击“开始回合行动”，勇者将会按照指定的动作进行回合<br/>
+      目前这个Demo想输掉的话，请一直选择待机
+    </div>
+    <div id="heroes">
+      <img id="hero1" src= "" alt="">
+<!--       <img id="hero2" src= "" alt="">
+      <img id="hero3" src= "" alt="">
+      <img id="hero4" src= "" alt=""> -->
+    </div>
+  </div>
+  <div id="h1-action">
+    <span id="hero1Name">{{hero1.name}}</span>
+    <select name="action" id="hero1Action">
+      <option value="attack">攻击</option>
+      <option value="wait">待机</option>
+    </select>
+    <select name="target" id="hero1Target">
+      
+    </select>
+  </div>
+  <div>
+    <button id="startRound">开始回合行动</button>
+  </div>
+
+  <script type="module" src="./js/class.js"></script>
+  <script type="module" src="./js/monster.js"></script>
+  <script type="module" src="./js/test.js"></script>
+
+</body>
+</html>
