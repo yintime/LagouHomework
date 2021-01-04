@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+  <div id="calculator">
+    <input type="number" id="number1">
+    <select name="operator" id="operator">
+      <option value="0">请选择</option>
+      <option value="1">+</option>
+      <option value="2">-</option>
+      <option value="3">×</option>
+      <option value="4">÷</option>
+    </select>
+    <input type="number" id="number2">
+    <button>=</button>
+    <input type="text" id="answer">
+  </div>
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script>
+    // const $calculator = $(document.createElement("div")).attr("id","calculator");
+    // $calculator.append($("<input>").attr('type','number').attr('id','number1'));
+    // $calculator.append($("<input>").attr('type','number').attr('id','number2'));
+    // $('body').prepend($calculator);
+    $('button').on("click",calculator);
+    function calculator(){
+      $("#answer").val(cal($("#number1").val(),$("#number2").val(),$("#operator").val()));
+      console.log($("#number1").val(),$("#number2").val(),$("#operator").val());
+    }
+
+    //封装函数
+    //参数1：操作数1
+    //参数2：操作数2
+    //参数3：操作类型（1：加 2：减 3：乘 4：除以 ）
+    //返回值：操作数1 操作 操作数2后的结果
+    function cal(number1,number2,operator){
+      switch (operator) {
+        case "1":
+          return Number(number1) + Number(number2); 
+          break;
+        case "2":
+          return number1 - number2;
+          break;
+        case "3":
+          return number1 * number2;
+          break;
+        case "4":
+          return number1 / number2;
+          break;
+        default:
+          return "操作类型有误"
+          break;
+      }
+    }
+  </script>
+</body>
+</html>

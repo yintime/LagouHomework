@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #stars{
+    font-size: 80px;
+    color: yellow;
+    background-color: #666;
+  }
+  #stars span{
+    cursor: pointer;
+  }
+</style>
+<body>
+  <div id="stars">
+    <span>☆</span>
+    <span>☆</span>
+    <span>☆</span>
+    <span>☆</span>
+    <span>☆</span>
+  </div>
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script>
+    //鼠标移上时，自身和之前的兄弟元素满星，之后的兄弟元素空星
+    $("#stars").children('span').on("mouseover",function(e){
+      e.target.innerHTML='★';
+      $(e.target).prevAll().text('★')
+      $(e.target).nextAll().text('☆')
+    })
+    //离开时清空
+    $("#stars").on('mouseleave',()=>{
+      $("#stars").children('span').text('☆')
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #messageBoard{
+    background-color: orange;
+    width: 24em;
+    padding-bottom: 1em;
+  }
+  #content{
+    display: block;
+    margin-left: 4em;
+    height: 4em;
+  }
+  .content{
+    margin-left: 4em;
+  }
+
+  #anonymous-container{
+    position: relative;
+    left: 18em;
+  }
+  #submit{
+    display: block;
+  }
+  .clearfix{zoom: 1;}
+  .clearfix::after{content: "";display: block;clear: both;}
+
+</style>
+<body>
+  <div id="messageBoard" class="clearfix">
+    <label for="nickName">昵称：</label>
+    <input type="text" id="nickName">
+    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+      <div id="anonymous-container" class="clearfix">
+        <input type="checkbox" id="anonymous" value="anonymous"><label for="anonymous">匿名</label>
+        <button id="submit">发表</button>
+      </div>
+  </div>
+  
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script>
+    //绑定click事件
+    $('#submit').on('click',submit)
+    
+    function submit(){
+      let nickName = $("#nickName").val();
+      let content = $("#content").val();
+      //获取昵称和内容，格式化生成元素并添加到组件内部的最后
+      if (nickName!=""&&content!=""){
+        if($("#anonymous").prop("checked")){
+          nickName = "路人甲"
+        }
+        const $newMessage = $("<hr><div><p>"+nickName+" "+new Date().toLocaleTimeString()+"</p><p class='content'>"
+          +content+"</p></div>").css('background-color','orange')
+        $('#messageBoard').append($newMessage);
+      }
+      else{ alert("昵称和内容不能为空") }
+    }
+  </script>
+</body>
+</html>
