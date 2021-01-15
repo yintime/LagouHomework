@@ -1,0 +1,1 @@
+lessc ./less/main.less ./css/main.css && minify ./css/main.css > ./css/main.min.css && pause
