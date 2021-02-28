@@ -65,12 +65,12 @@ const routes = [
       {
         path: '/menu/create',
         name: 'menu-create',
-        component: () => import(/* webpackChunkName: 'advert-space' */'@/views/menu/create')
+        component: () => import(/* webpackChunkName: 'menu-create' */'@/views/menu/create')
       },
       {
         path: '/menu/:id/edit',
         name: 'menu-edit',
-        component: () => import(/* webpackChunkName: 'advert-space' */'@/views/menu/edit')
+        component: () => import(/* webpackChunkName: 'menu-edit' */'@/views/menu/edit')
       },
       {
         path: '/role/:roleId/alloc-menu',
@@ -104,6 +104,11 @@ const routes = [
         name: 'course-video',
         component: () => import(/* webpackChunkName: 'course-video' */'@/views/course/video'),
         props: true
+      },
+      {
+        path: '/advert-space/create',
+        name: 'advert-space-create',
+        component: () => import(/* webpackChunkName: 'advert-space-creat' */'@/views/advert-space/create')
       }
     ]
   },

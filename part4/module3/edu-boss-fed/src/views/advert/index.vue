@@ -1,10 +1,15 @@
 <template>
-  <div class="advert">广告管理</div>
+  <advert-list></advert-list>
 </template>
 
 <script>
+import AdvertList from './components/List'
+
 export default {
-  name: 'AdvertIndex'
+  name: 'AdvertIndex',
+  components: {
+    AdvertList
+  }
 }
 </script>
 

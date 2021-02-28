@@ -41,11 +41,11 @@
           <span slot="title">广告管理</span>
         </template>
         <el-menu-item index="/advert">
-          <i class="el-icon-document"></i>
+          <i class="el-icon-setting"></i>
           <span>广告列表</span>
         </el-menu-item>
         <el-menu-item index="/advert-space">
-          <i class="el-icon-document"></i>
+          <i class="el-icon-setting"></i>
           <span>广告位列表</span>
         </el-menu-item>
       </el-submenu>

@@ -78,7 +78,7 @@ export default {
       // 一级菜单列表
       parentMenuList: [],
       // 校验规则
-      rules: []
+      rules: {}
     }
   },
   // created钩子

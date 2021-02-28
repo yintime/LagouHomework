@@ -1,10 +1,15 @@
 <template>
-  <div class="advert-space">广告位管理</div>
+  <advert-space-list></advert-space-list>
 </template>
 
 <script>
+import AdvertSpaceList from './components/List'
+
 export default {
-  name: 'AdvertSpaceIndex'
+  name: 'AdvertSpaceIndex',
+  components: {
+    AdvertSpaceList
+  }
 }
 </script>
 
