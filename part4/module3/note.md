@@ -17,7 +17,7 @@ json转对象：JSON.parse(json)
 
 7. 路由前置守卫处理之后务必有next()执行，不然不会发生跳转。（return next只是返回了next对象，并没有修改）
 
-8. vue子组件 绑定原生响应事件需要在事件名后加(@click).native修饰符
+8. vue子组件根元素绑定原生响应事件需要在事件名后加(@click).native修饰符
 
 9. 一定要先本地存用户信息 再路由跳转
 

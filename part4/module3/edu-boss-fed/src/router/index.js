@@ -1,26 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// 引入 store
 import store from '@/store'
-
-// 引入路由中需要使用的组件功能(懒加载中使用了路径 所以这部分注释掉 保留一条做写法参考)
-// import Login from '@/views/login/index'
 
 Vue.use(VueRouter)
 
-// 路由规则
+// 路由规则（添加需要认证的 requiresAuth 信息）
 const routes = [
   {
     path: '/login',
     name: 'login',
-    // 懒加载同时魔法注释Chunk包名为login
     component: () => import(/* webpackChunkName: 'login' */'@/views/login/index')
   },
   {
     path: '/',
     component: () => import(/* webpackChunkName: 'layout' */'@/views/layout/index'),
-    meta: {
-      requiresAuth: true
-    },
+    // 直接给某个路由设置，这时内部的子路由都需要认证（包含当前路由）
+    meta: { requiresAuth: true },
     children: [
       {
         path: '',
@@ -62,16 +58,19 @@ const routes = [
         name: 'advert-space',
         component: () => import(/* webpackChunkName: 'advert-space' */'@/views/advert-space/index')
       },
+      // 添加菜单路由组件
       {
         path: '/menu/create',
         name: 'menu-create',
         component: () => import(/* webpackChunkName: 'menu-create' */'@/views/menu/create')
       },
+      // 编辑菜单路由组件
       {
         path: '/menu/:id/edit',
         name: 'menu-edit',
         component: () => import(/* webpackChunkName: 'menu-edit' */'@/views/menu/edit')
       },
+      // 分配菜单路由组件
       {
         path: '/role/:roleId/alloc-menu',
         name: 'alloc-menu',
@@ -104,11 +103,6 @@ const routes = [
         name: 'course-video',
         component: () => import(/* webpackChunkName: 'course-video' */'@/views/course/video'),
         props: true
-      },
-      {
-        path: '/advert-space/create',
-        name: 'advert-space-create',
-        component: () => import(/* webpackChunkName: 'advert-space-creat' */'@/views/advert-space/create')
       }
     ]
   },
@@ -143,4 +137,5 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
+
 export default router

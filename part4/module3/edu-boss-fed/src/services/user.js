@@ -1,6 +1,5 @@
 import request from '@/utils/request'
 import qs from 'qs'
-// import { Store } from 'vuex'
 
 // 用户登录接口
 export const login = data => {
@@ -38,14 +37,3 @@ export const forbidUser = userId => {
     }
   })
 }
-
-/* // 刷新 token 接口
-export const refreshToken = () => {
-  return request({
-    method: 'POST',
-    url: '/front/user/refresh_token',
-    data: qs.stringify({
-      refreshtoken: Store.state.user.refresh_token
-    })
-  })
-} */

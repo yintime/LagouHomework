@@ -1,11 +1,10 @@
 import request from '@/utils/request'
-// import qs from 'qs'
-// import { Store } from 'vuex'
 
 // 获取编辑菜单页面信息
 export const getEditMenuInfo = (id = -1) => {
   return request({
     method: 'GET',
+    // url: `/boss/menu/getEditMenuInfo?id=${id}`
     url: '/boss/menu/getEditMenuInfo',
     params: {
       id
@@ -13,8 +12,8 @@ export const getEditMenuInfo = (id = -1) => {
   })
 }
 
-// 保存更新菜单接口
-export const saveOrUpdateMenu = data => {
+// 添加菜单接口
+export const createOrUpdateMenu = data => {
   return request({
     method: 'POST',
     url: '/boss/menu/saveOrUpdate',

@@ -1,14 +1,18 @@
 import axios from 'axios'
+// 引入 Vuex 的数据
 import store from '@/store'
-// 局部引入element的 Message组件功能
+// 通过局部引入方式引入 Element 的 Message 组件功能
 import { Message } from 'element-ui'
+// 引入 router
 import router from '@/router'
-// import { refreshToken } from '@/services/user'
+// 引入 qs 用于进行请求参数处理
 import qs from 'qs'
 
-// crate 创建axios实例
+// create 创建 axios 实例
 const request = axios.create({
   // timeout: 2000
+  // baseURL:
+  // headers:
 })
 
 function getBaseURL (url) {
@@ -19,10 +23,11 @@ function getBaseURL (url) {
   }
 }
 
-// request拦截器
-request.interceptors.request.use(config => {
-  // 根据config.url 的开头，来确定 baseURL
+// 请求拦截器
+request.interceptors.request.use(function (config) {
+  // 判断 config.url 的前缀，来进行请求 baseURL 的设置
   config.baseURL = getBaseURL(config.url)
+
   // 统一设置 Token 信息
   const { user } = store.state
   if (user && user.access_token) {
@@ -41,45 +46,39 @@ function redirectLogin () {
     }
   })
 }
-// 存储是否 正在更新Token 的状态
+
+// 存储是否正在更新 Token 的状态
 let isRefreshing = false
-// 存储因为等待刷新Token而挂起的请求
+// 存储因为等待 Token 刷新而挂起的请求
 let requests = []
 
-// 添加响应拦截器
+// 响应拦截器
 request.interceptors.response.use(function (response) {
-  // 状态码 2XX 时, 对响应数据做点什么
+  // 状态码 2xx 会执行这里
+  // console.log('响应成功了：', response)
   return response
 }, function (error) {
-  // 对响应错误做点什么
   if (error.response) {
-    // 请求发送成功，响应接收完毕，但状态码为失败的情况
     const { status } = error.response
     let errorMessage = ''
     if (status === 400) {
       errorMessage = '请求参数错误'
     } else if (status === 401) {
-      // 情况一：无token，跳转登录页
       if (!store.state.user) {
-        router.push({
-          name: 'login',
-          query: {
-            // currentRoute就是模块里的route
-            redirect: router.currentRoute.fullPath
-          }
-        })
+        redirectLogin()
         return Promise.reject(error)
       }
-      // Token过期错误 需要刷新Token
-      // 检测token是否正在刷新
-      // requests数组中存储的是匿名函数（动作）
+
+      // 检测是否已经存在了正在刷新 Token 的请求
       if (isRefreshing) {
+        // 将当前失败的请求，存储到请求列表中
         return requests.push(() => {
+          // 当前函数调用后，会自动发送本次失败的请求
           request(error.config)
         })
       }
       isRefreshing = true
-      // 发送请求 获取新的access token
+      // 发送请求，获取新的 access_token
       return request({
         method: 'POST',
         url: '/front/user/refresh_token',
@@ -87,23 +86,26 @@ request.interceptors.response.use(function (response) {
           refreshtoken: store.state.user.refresh_token
         })
       }).then(res => {
-        // 返回情况一：刷新失败
+        // - 刷新 token 失败
         if (res.data.state !== 1) {
           // 清除无效的用户信息
           store.commit('setUser', null)
           redirectLogin()
           return Promise.reject(error)
         }
-        // 返回情况二：刷新成功
-        // 存储新的token
+        // 刷新 token 成功
+        //  - 存储新的 token
         store.commit('setUser', res.data.content)
-        // 重新发送失败的请求
+        //  - 重新发送失败的请求（根据 requests 发送所有失败的请求）
         requests.forEach(callback => callback())
+        //  - 发送完毕，清除 requests 内容即可
         requests = []
+        //  - 将本次请求发送
         return request(error.config)
       }).catch(err => {
         console.log(err)
       }).finally(() => {
+        // 请求发送完毕，响应处理完毕，将刷新状态更改为 false 即可
         isRefreshing = false
       })
     } else if (status === 403) {
@@ -115,13 +117,13 @@ request.interceptors.response.use(function (response) {
     }
     Message.error(errorMessage)
   } else if (error.request) {
-    // 请求发送成功， 但是未收到响应
-    Message.error(error.request)
+    // 请求发送成功，但是未收到响应
+    Message.error('请求超时，请重试')
   } else {
     // 意料之外的错误
     Message.error(error.message)
   }
-  // 将本次请求的错误继续向后抛出， 让接受响应的处理函数进行操作
+  // 将本次请求的错误对象继续向后抛出，让接收响应的处理函数进行操作
   return Promise.reject(error)
 })
 
