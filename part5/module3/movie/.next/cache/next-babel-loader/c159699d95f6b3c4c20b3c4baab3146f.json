@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const baseURL = 'http://localhost:3005';","map":{"version":3,"sources":["D:/lagou/React/movie/axiosConfig.js"],"names":["baseURL"],"mappings":"AAAA,OAAO,MAAMA,OAAO,GAAG,uBAAhB","sourcesContent":["export const baseURL = 'http://localhost:3005'"]},"metadata":{},"sourceType":"module"}

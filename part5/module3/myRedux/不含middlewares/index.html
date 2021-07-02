@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="increment">+1</button>
+  <span id='box'>0</span>
+  <button id="decrement">-1</button>
+  <script src="index.js"></script>
+  <script>
+    //enhancer的返回值是经过强化的store对象
+    function enhancer(createStore){
+      return function (reducer,preloadedState){
+        const store = createStore(reducer,preloadedState)
+        //获取dispatch 并对其进行重写 然后在新的store里面return出去
+        const dispatch = store.dispatch
+        function _dispatch(action){
+          //如果action是个包含异步操作的函数（因为只有函数才可以执行异步操作）
+          if (typeof action === 'function') {
+            //执行异步action并返回 (action中必然会执行dispatch操作，所以要将dispatch作为形参传入)
+            return action(dispatch)
+          }
+          //action不是函数 那么还是按照原来的方式执行
+          dispatch(action)
+        }
+        
+        return {...store, dispatch:_dispatch}
+      }
+    }
+
+    function reducer (state,action) {
+      switch (action.type) {
+        case 'increment':
+          return state + 1
+        case 'decrement':
+          return state - 1
+        default:
+          return state
+      }
+    }
+
+    const box = document.getElementById('box')
+    const store = createStore(reducer,0,enhancer)
+    //subscribe的参数必须是一个function（订阅者操作函数）
+    store.subscribe(function () {
+      box.innerHTML = store.getState()
+    })
+    document.getElementById('increment').onclick =
+    function () {
+      store.dispatch({type:'increment'})
+    }
+
+    document.getElementById('decrement').onclick =
+    function () {
+      store.dispatch({type:'decrement'})
+    }
+  </script>
+</body>
+</html>
