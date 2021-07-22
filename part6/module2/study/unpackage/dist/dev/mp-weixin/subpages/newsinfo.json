@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "html-parse": "/components/html-parse/parse",
+    "pic-blur": "/components/pic-blur",
+    "comment": "/components/comment"
+  }
+}

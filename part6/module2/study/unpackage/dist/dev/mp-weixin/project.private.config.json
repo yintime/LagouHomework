@@ -1,0 +1,24 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "subpages/newsinfo",
+          "pathName": "subpages/newsinfo",
+          "query": "id=1",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

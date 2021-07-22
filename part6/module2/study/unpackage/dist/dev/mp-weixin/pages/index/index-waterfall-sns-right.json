@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "index-waterfall-sns-right": "/pages/index/index-waterfall-sns-right",
+    "waterfall-sns": "/components/sns-waterfall"
+  }
+}
