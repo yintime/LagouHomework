@@ -45,8 +45,8 @@ export default class Main {
   }
   loop(){
     //开启定时器
-    //这里获取到的返回值始终是ph类型对象 值为9999 所以只能手动刷新this.aniId
-    let test = requestAnimationFrame(()=>{
+    //曾经遇到过requestAnimationFrame返回值是定值（9999）的情况 原因未知
+    this.aniId = requestAnimationFrame(()=>{
       //console.log(test)
       //判断是否加载完成
       if (databus.load) {
@@ -75,7 +75,7 @@ export default class Main {
         
         this.update()
       }
-      this.aniId++
+      //this.aniId++
       //console.log(test)
       this.loop()
     })
