@@ -1,0 +1,1 @@
+<view class="content"><text>首页</text><view><navigator url="/chat/chat">前往聊天</navigator></view><child vue-id="8dd740cc-1" msg="{{msg}}" data-event-opts="{{[['^childEvent',[['childPrint']]]]}}" bind:childEvent="__e" bind:__l="__l"></child></view>

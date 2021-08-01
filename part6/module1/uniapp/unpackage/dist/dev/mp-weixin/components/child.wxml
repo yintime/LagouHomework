@@ -1,0 +1,1 @@
+<view class="data-v-efbcda1e"><view class="red data-v-efbcda1e"><text class="data-v-efbcda1e">子组件</text></view><text class="data-v-efbcda1e">{{msg}}</text><button data-event-opts="{{[['tap',[['doChildEvent',['$event']]]]]}}" bindtap="__e" class="data-v-efbcda1e">子组件执行父组件传入的自定义事件</button></view>

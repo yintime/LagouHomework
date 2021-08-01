@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "微信",
+  "backgroundColor": "#007cba",
+  "usingComponents": {
+    "child": "/components/child"
+  }
+}

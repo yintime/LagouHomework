@@ -1,0 +1,1 @@
+<view><view><text>通讯录</text></view><view>{{''+userName+''}}</view><view><button type="default" data-event-opts="{{[['tap',[['login',['登陆用户']]]]]}}" bindtap="__e">登陆</button><button type="default" data-event-opts="{{[['tap',[['logout',['$event']]]]]}}" bindtap="__e">退出</button></view></view>
