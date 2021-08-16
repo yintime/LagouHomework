@@ -1,0 +1,8 @@
+<element name="bottomNav" src="../../common/components/bottomNav/index.hml"></element>
+
+<div class="container">
+    <text class="title">
+        我的页面
+    </text>
+    <bottomNav cur-index="3"></bottomNav>
+</div>
