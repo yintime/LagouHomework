@@ -1,3 +1,0 @@
-通过http://localhost:3000/页面的链接跳转到link组件工作正常。但此时刷新页面(http直接访问)就会有如下报错
-Error: Could not find "store" in the context of "Connect(List)". Either wrap the root component in a <Provider>, or pass a custom React context provider to <Provider> and the corresponding React context consumer to Connect(List) in connect options.
-请问是什么原因？是否是由于没有通过LINK跳转直接访问导致的预期现象？
